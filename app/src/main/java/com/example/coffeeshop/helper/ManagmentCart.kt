@@ -3,19 +3,7 @@ package com.example.coffeeshop.helper
 import android.content.Context
 import android.widget.Toast
 import com.example.coffeeshop.model.ItemsModel
-
---------------------just for test -------------------------------
-package com.example.coffeeshop.helper
-
-import android.content.Context
-import android.widget.Toast
-import com.example.coffeeshop.model.ItemsModel
-
---------------------just for test -------------------------------
-
-
 class ManagmentCart(val context: Context) {
-
     private val SaikatDB = SaikatDB(context)
 
     fun insertItems(item: ItemsModel) {
@@ -31,11 +19,9 @@ class ManagmentCart(val context: Context) {
         SaikatDB.putListObject("CartList", listItem)
         Toast.makeText(context, "Added to your Cart", Toast.LENGTH_SHORT).show()
     }
-
     fun getListCart(): ArrayList<ItemsModel> {
         return SaikatDB.getListObject("CartList") ?: arrayListOf()
     }
-
     fun minusItem(listItems: ArrayList<ItemsModel>, position: Int, listener: ChangeNumberItemsListener) {
         if (listItems[position].numberInCart == 1) {
             listItems.removeAt(position)
@@ -61,3 +47,4 @@ class ManagmentCart(val context: Context) {
         return fee
     }
 }
+
